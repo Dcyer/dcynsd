@@ -24,5 +24,8 @@
         "sass-loader": "^7.1.0",
         "startbootstrap-clean-blog": "^5.0.1",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "simplemde": "^1.11.2"
     }
 }

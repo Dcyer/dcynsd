@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 {{-- 文章详情 --}}
-                <article>
+                <article class="markdown">
                     {!! $post->content_html !!}
                 </article>
 

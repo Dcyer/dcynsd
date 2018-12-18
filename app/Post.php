@@ -6,6 +6,43 @@ use App\Services\Markdowner;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Post
+ *
+ * @property int $id
+ * @property string $slug
+ * @property string $title
+ * @property string $subtitle
+ * @property string $content_raw
+ * @property string $content_html
+ * @property string $page_image
+ * @property string $meta_description
+ * @property int $is_draft
+ * @property string $layout
+ * @property string|null $deleted_at
+ * @property \Illuminate\Support\Carbon|null $published_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Tag[] $tags
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereContentHtml($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereContentRaw($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereIsDraft($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereLayout($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereMetaDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post wherePageImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post wherePublishedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereSubtitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Post extends Model
 {
     protected $fillable = [
