@@ -24,11 +24,20 @@ class Simplemde extends Field
                 autofocus: true,
                 autosave: {
                     enabled: true,
-                    delay: 5000,
+                    delay: 10000,
                     unique_id: "editor01",
                 },
                 spellChecker: false,
-                placeholder: "请使用 MarkDown 语法"
+                autoDownloadFontAwesome: false,
+                tabSize: 4,
+                placeholder: "请使用 Markdown 格式书写 ;-)，代码片段黏贴时请注意使用高亮语法。",
+                toolbar: [
+                    "bold", "italic", "strikethrough", "heading", "code", "quote", "unordered-list",
+                    "ordered-list", "clean-block", "link", "image", "table", "horizontal-rule", "preview", "side-by-side", "fullscreen", "guide",
+                ],
+                renderingConfig: {
+                    codeSyntaxHighlighting: true
+                }
             });
 
 EOT;

@@ -14,6 +14,7 @@
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 @import "./Markdown";
+@import "~highlight.js/styles/paraiso-dark.css";
 
 .intro-header .post-heading .meta a, article a {
   text-decoration: underline;

@@ -104,8 +104,11 @@ class PostsController extends Controller
         $form->text('subtitle', '副标题')->rules('required');
         $form->multipleSelect('tags', '标签')->options(Tag::all()->pluck('tag', 'id'));
         $form->editor('content_raw', '内容');
-        $form->image('page_image', '封面图片')->rules('required');
-        $form->text('meta_description', '文章描述');
+        $form->image('page_image', '封面图片')->move('uploads', function($file){
+            $file_name =  date("Ymd") . '/' . str_random(16);
+            return $file_name . "." . $file->guessExtension();
+        });
+        $form->text('meta_description', '文章描述')->rules('required');
         $form->switch('is_draft', '是否草稿');
         $form->datetime('published_at', '发布时间')->default(date('Y-m-d H:i:s'));
 

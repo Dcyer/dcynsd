@@ -1,6 +1,9 @@
 
 window._ = require('lodash');
 
+import hljs from 'highlight.js'
+window.hljs = hljs
+hljs.initHighlightingOnLoad();
 window.simplemde = require('simplemde');
 
 /**

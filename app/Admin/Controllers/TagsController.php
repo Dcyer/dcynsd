@@ -94,7 +94,10 @@ class TagsController extends Controller
         $form->text('tag', '标签');
         $form->text('title', '标题');
         $form->text('subtitle', '副标题');
-        $form->image('page_image', '标签图片');
+        $form->image('page_image', '标签图片')->move('uploads', function($file){
+            $file_name =  date("Ymd") . '/' . str_random(16);
+            return $file_name . "." . $file->guessExtension();
+        });
         $form->text('meta_description', '标签介绍');
         $form->switch('reverse_direction', '文章按时间升序排列（默认降序）');
 
