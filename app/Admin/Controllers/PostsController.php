@@ -81,7 +81,7 @@ class PostsController extends Controller
             $actions->disableView();
         });
 
-        $grid->filter(function($filter){
+        $grid->filter(function ($filter) {
             // 去掉默认的id过滤器
             $filter->disableIdFilter();
             $filter->like('title', '标题');
@@ -104,10 +104,13 @@ class PostsController extends Controller
         $form->text('subtitle', '副标题')->rules('required');
         $form->multipleSelect('tags', '标签')->options(Tag::all()->pluck('tag', 'id'));
         $form->editor('content_raw', '内容');
-        $form->image('page_image', '封面图片')->move('uploads', function($file){
-            $file_name =  date("Ymd") . '/' . str_random(16);
-            return $file_name . "." . $file->guessExtension();
+
+        $folder_dir = "uploads/images/posts/" . date("Ym/d", time());
+        $form->image('page_image', '封面图片')->move($folder_dir, function ($file) {
+            $extension = $file->guessExtension();
+            return time() . '_' . str_random(10) . '.' . $extension;
         });
+
         $form->text('meta_description', '文章描述')->rules('required');
         $form->switch('is_draft', '是否草稿');
         $form->datetime('published_at', '发布时间')->default(date('Y-m-d H:i:s'));

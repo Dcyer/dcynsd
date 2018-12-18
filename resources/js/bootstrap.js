@@ -1,10 +1,8 @@
+import hljs from 'highlight.js'
 
 window._ = require('lodash');
-
-import hljs from 'highlight.js'
-window.hljs = hljs
-hljs.initHighlightingOnLoad();
 window.simplemde = require('simplemde');
+window.hljs = hljs
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

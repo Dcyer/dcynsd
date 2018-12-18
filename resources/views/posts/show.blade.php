@@ -15,8 +15,9 @@
                         <span class="meta">
                             发布于&nbsp; {{ $post->published_at->diffForHumans() }}
                             @if ($post->tags->count())
-                                &nbsp;&nbsp;
-                                {!! join(', ', $post->tagLinks()) !!}
+                                @foreach($post->tagLinks() as $link)
+                                    <span class="badge badge-pill badge-info">{!! $link !!}</span>
+                                @endforeach
                             @endif
                         </span>
                     </div>
@@ -36,8 +37,7 @@
                     {!! $post->content_html !!}
                 </article>
 
-                <hr>
-
+                <br>
                 {{-- 上一篇、下一篇导航 --}}
                 <div class="clearfix">
                     {{-- Reverse direction --}}
@@ -72,4 +72,10 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 @stop

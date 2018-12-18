@@ -32,8 +32,9 @@
                         <p class="post-meta">
                             发布于&nbsp; {{ $post->published_at->diffForHumans() }}
                             @if ($post->tags->count())
-                                &nbsp;&nbsp;
-                                {!! join(', ', $post->tagLinks()) !!}
+                                @foreach($post->tagLinks() as $link)
+                                    <span class="badge badge-pill badge-info">{!! $link !!}</span>
+                                @endforeach
                             @endif
                         </p>
                     </div>

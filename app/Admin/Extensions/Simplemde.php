@@ -22,11 +22,6 @@ class Simplemde extends Field
 
  var simplemde = new SimpleMDE({
                 autofocus: true,
-                autosave: {
-                    enabled: true,
-                    delay: 10000,
-                    unique_id: "editor01",
-                },
                 spellChecker: false,
                 autoDownloadFontAwesome: false,
                 tabSize: 4,
@@ -37,9 +32,8 @@ class Simplemde extends Field
                 ],
                 renderingConfig: {
                     codeSyntaxHighlighting: true
-                }
+                },
             });
-
 EOT;
         return parent::render();
 

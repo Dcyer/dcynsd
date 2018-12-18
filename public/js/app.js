@@ -94281,11 +94281,10 @@ jQuery(document).ready(function ($) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! highlight.js */ "./node_modules/highlight.js/lib/index.js");
 /* harmony import */ var highlight_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(highlight_js__WEBPACK_IMPORTED_MODULE_0__);
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
-window.hljs = highlight_js__WEBPACK_IMPORTED_MODULE_0___default.a;
-highlight_js__WEBPACK_IMPORTED_MODULE_0___default.a.initHighlightingOnLoad();
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 window.simplemde = __webpack_require__(/*! simplemde */ "./node_modules/simplemde/src/js/simplemde.js");
+window.hljs = highlight_js__WEBPACK_IMPORTED_MODULE_0___default.a;
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
