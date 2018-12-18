@@ -1,2 +1,6 @@
 *
 !.gitignore
+!uploads/about-bg.jpg
+!uploads/contact-bg.jpg
+!uploads/home-bg.jpg
+!uploads/post-bg.jpg
