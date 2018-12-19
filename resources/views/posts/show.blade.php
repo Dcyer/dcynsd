@@ -38,6 +38,22 @@
                 </article>
 
                 <br>
+
+                <!-- 分享 -->
+                <div class="social-share" style="text-align: center"></div>
+
+                <!-- 署名 -->
+                <div class="article-license mb10 mt20 alert alert-info" style="border-radius:10px">
+                    <div class="license-item license-sa" style="text-align: center; font-weight: bold;">
+                        本文由
+                        <a href="https://www.codecasts.com/user/jellybool" class="alert-link">JellyBool</a>
+                        创作, 转载和引用遵循
+                        <a href="http://creativecommons.org/licenses/by-nc/2.5/cn/" target="_blank"
+                           rel="noreferrer noopener" class="alert-link">
+                            署名-非商业性使用 2.5 中国大陆</a> 进行许可。<br>
+                    </div>
+                </div>
+
                 {{-- 上一篇、下一篇导航 --}}
                 <div class="clearfix">
                     {{-- Reverse direction --}}
@@ -76,6 +92,7 @@
 
 @section('scripts')
     <script>
+        // 加载 语法高亮
         hljs.initHighlightingOnLoad();
     </script>
 @stop

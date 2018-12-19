@@ -15,6 +15,7 @@
 
 @import "./Markdown";
 @import "~highlight.js/styles/monokai-sublime.css";
+@import "~social-share.js/dist/css/share.min.css";
 
 .intro-header .post-heading .meta a, article a {
   text-decoration: underline;
@@ -50,4 +51,32 @@ dd {
 
 p a {
   text-decoration: none;
+}
+
+.share-qrcode {
+  a.social {
+    position: relative;
+  }
+
+  .social img.qrcode {
+    position: absolute;
+    z-index: 99;
+    top: -170px;
+    right: -40px;
+    width: 9.5rem;
+    max-width: none;
+    height: 9.5rem;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+    opacity: 0;
+    border: 0.3125rem solid #0085ba;
+    border-radius: 0.25rem;
+  }
+
+  .social:hover img.qrcode {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

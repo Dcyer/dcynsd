@@ -16,6 +16,7 @@ try {
 
     require('bootstrap');
     require('datatables.net-bs4');
+    require('social-share.js/dist/js/social-share.min')
 } catch (e) {}
 
 /**
