@@ -20,11 +20,11 @@ class PostsTableSeeder extends Seeder
 
         DB::table('post_tag_pivot')->truncate();
 
-        factory(Post::class, 50)->create()->each(function ($post) use ($tags) {
+        factory(Post::class, 100)->create()->each(function ($post) use ($tags) {
 
-            if (mt_rand(1, 100) <= 30) {
-                return;
-            }
+//            if (mt_rand(1, 100) <= 30) {
+//                return;
+//            }
 
             shuffle($tags);
             $postTags = [$tags[0]];

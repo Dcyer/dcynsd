@@ -42,11 +42,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $licenses 署名描述
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereLicenses($value)
  */
 class Post extends Model
 {
     protected $fillable = [
-        'title', 'content', 'slug', 'published_at',
+        'title', 'content', 'slug', 'published_at', 'licenses_name', 'licenses_link',
     ];
 
     protected $dates = ['published_at'];

@@ -44,45 +44,44 @@
 
                 <!-- 署名 -->
                 <div class="article-license mb10 mt20 alert alert-info" style="border-radius:10px">
-                    <div class="license-item license-sa" style="text-align: center; font-weight: bold;">
-                        本文由
-                        <a href="https://www.codecasts.com/user/jellybool" class="alert-link">JellyBool</a>
-                        创作, 转载和引用遵循
-                        <a href="http://creativecommons.org/licenses/by-nc/2.5/cn/" target="_blank"
-                           rel="noreferrer noopener" class="alert-link">
-                            署名-非商业性使用 2.5 中国大陆</a> 进行许可。<br>
-                    </div>
+                    @if($post->licenses_name)
+                        <div class="license-item license-sa" style="text-align: center; font-weight: bold;">
+                            本文转载于 <a target="_blank" href="{{ $post->licenses_link }}">{{ $post->licenses_name }}</a>
+                            <br>
+                            转载和引用遵循
+                            <a href="http://creativecommons.org/licenses/by-nc/2.5/cn/" target="_blank"
+                               rel="noreferrer noopener" class="alert-link">
+                                署名-非商业性使用 2.5 中国大陆</a> 进行许可。<br>
+                        </div>
+                    @else
+                        <div class="license-item license-sa" style="text-align: center; font-weight: bold;">
+                            本文由
+                            <a target="_blank" href="http://www.dcy1997.cn"
+                               class="alert-link">{{ config('blog.author') }}</a>
+                            创作
+                            <br>
+                            转载和引用遵循
+                            <a href="http://creativecommons.org/licenses/by-nc/2.5/cn/" target="_blank"
+                               rel="noreferrer noopener" class="alert-link">
+                                署名-非商业性使用 2.5 中国大陆</a> 进行许可。<br>
+                        </div>
+                    @endif
                 </div>
 
                 {{-- 上一篇、下一篇导航 --}}
                 <div class="clearfix">
                     {{-- Reverse direction --}}
-                    @if ($tag && $tag->reverse_direction)
-                        @if ($post->olderPost($tag))
-                            <a class="btn btn-primary float-left" href="{!! $post->olderPost($tag)->url($tag) !!}">
-                                ←
-                                Previous {{ $tag->tag }} Post
-                            </a>
-                        @endif
-                        @if ($post->newerPost($tag))
-                            <a class="btn btn-primary float-right" ref="{!! $post->newerPost($tag)->url($tag) !!}">
-                                Next {{ $tag->tag }} Post
-                                →
-                            </a>
-                        @endif
-                    @else
-                        @if ($post->newerPost($tag))
-                            <a class="btn btn-primary float-left" href="{!! $post->newerPost($tag)->url($tag) !!}">
-                                ←
-                                上一篇 文章
-                            </a>
-                        @endif
-                        @if ($post->olderPost($tag))
-                            <a class="btn btn-primary float-right" href="{!! $post->olderPost($tag)->url($tag) !!}">
-                                下一篇 文章
-                                →
-                            </a>
-                        @endif
+                    @if ($post->newerPost($tag))
+                        <a class="btn btn-primary float-left" href="{!! $post->newerPost($tag)->url($tag) !!}">
+                            ←
+                            上一篇 {{ $tag ? $tag->tag : '' }} 文章
+                        </a>
+                    @endif
+                    @if ($post->olderPost($tag))
+                        <a class="btn btn-primary float-right" href="{!! $post->olderPost($tag)->url($tag) !!}">
+                            下一篇 {{ $tag ? $tag->tag : '' }} 文章
+                            →
+                        </a>
                     @endif
                 </div>
             </div>

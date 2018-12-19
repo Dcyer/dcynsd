@@ -113,6 +113,8 @@ class PostsController extends Controller
 
         $form->text('meta_description', '文章描述')->rules('required');
         $form->switch('is_draft', '是否草稿');
+        $form->text('licenses_name', '署名名称');
+        $form->text('licenses_link', '署名链接');
         $form->datetime('published_at', '发布时间')->default(date('Y-m-d H:i:s'));
 
         return $form;

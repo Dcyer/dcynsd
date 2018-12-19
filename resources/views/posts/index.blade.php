@@ -44,32 +44,17 @@
                 {{-- 分页 --}}
                 <div class="clearfix">
                     {{-- Reverse direction --}}
-                    @if ($reverse_direction)
-                        @if ($posts->currentPage() > 1)
-                            <a class="btn btn-primary float-left" href="{!! $posts->url($posts->currentPage() - 1) !!}">
-                                ←
-                                Previous {{ $tag->tag }} Posts
-                            </a>
-                        @endif
-                        @if ($posts->hasMorePages())
-                            <a class="btn btn-primary float-right" ref="{!! $posts->nextPageUrl() !!}">
-                                Next {{ $tag->tag }} Posts
-                                →
-                            </a>
-                        @endif
-                    @else
-                        @if ($posts->currentPage() > 1)
-                            <a class="btn btn-primary float-left" href="{!! $posts->url($posts->currentPage() - 1) !!}">
-                                ←
-                                上一页 {{ $tag ? $tag->tag : '' }} 文章
-                            </a>
-                        @endif
-                        @if ($posts->hasMorePages())
-                            <a class="btn btn-primary float-right" href="{!! $posts->nextPageUrl() !!}">
-                                更多 {{ $tag ? $tag->tag : '' }} 文章
-                                →
-                            </a>
-                        @endif
+                    @if ($posts->currentPage() > 1)
+                        <a class="btn btn-primary float-left" href="{!! $posts->url($posts->currentPage() - 1) !!}">
+                            ←
+                            上一页 {{ $tag ? $tag->tag : '' }} 文章
+                        </a>
+                    @endif
+                    @if ($posts->hasMorePages())
+                        <a class="btn btn-primary float-right" href="{!! $posts->nextPageUrl() !!}">
+                            更多 {{ $tag ? $tag->tag : '' }} 文章
+                            →
+                        </a>
                     @endif
                 </div>
             </div>
